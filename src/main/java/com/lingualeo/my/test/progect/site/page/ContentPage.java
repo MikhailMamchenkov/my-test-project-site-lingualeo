@@ -40,8 +40,9 @@ public class ContentPage extends BasePage {
     }
 
     @Step("Дожидается загрузки страницы")
-    public void waitUntilPageLoad() {
+    public ContentPage waitUntilPageLoad() {
         commonActions.waitPageLoad();
+        return this;
     }
 
 

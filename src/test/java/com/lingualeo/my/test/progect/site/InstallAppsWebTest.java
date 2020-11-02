@@ -11,8 +11,9 @@ public class InstallAppsWebTest extends BaseWebSettingsTest {
 
     /*
     1. Кликает на кнопку "AppStore"
-    2. Совершает проверку Url
-    3. Делает проверку по видимости текста на странице "AppStore
+    2. Дожидается загрузки страницы "AppStore"
+    3. Совершает проверку Url
+    4. Делает проверку по видимости текста на странице "AppStore
      */
 
     @DisplayName("Проверяем возможность перехода по кнопке 'AppStore' для скачивания приложения")
@@ -21,14 +22,16 @@ public class InstallAppsWebTest extends BaseWebSettingsTest {
         driver.get("https://lingualeo.com");
         new InstallingApplicationsPage(driver)
                 .clickAppStore()
+                .waitUntilPageLoad()
                 .checkUrl("https://apps.apple.com/us/app/english-with-lingualeo/id480952151")
                 .contentWithDisplayed("English and other languages");
     }
 
     /*
     1. Кликает на кнопку "AppGallery"
-    2. Совершает проверку Url
-    3. Делает проверку по видимости текста на странице "AppGallery
+    2. Дожидается загрузки страницы "AppGallery"
+    3. Совершает проверку Url
+    4. Делает проверку по видимости текста на странице "AppGallery
      */
 
     @DisplayName("Проверяем возможность перехода по кнопке 'AppGallery' для скачивания приложения")
@@ -37,6 +40,7 @@ public class InstallAppsWebTest extends BaseWebSettingsTest {
         driver.get("https://lingualeo.com");
         new InstallingApplicationsPage(driver)
                 .clickAppGallery()
+                .waitUntilPageLoad()
                 .checkUrl("https://appgallery.huawei.com/#/app/C100980145")
                 .contentWithDisplayed("HUAWEI AppGallery");
 
@@ -44,8 +48,9 @@ public class InstallAppsWebTest extends BaseWebSettingsTest {
 
     /*
     1. Кликает на кнопку "Google Play"
-    2. Совершает проверку Url
-    3. Делает проверку по видимости текста на странице "Google Play
+    2. Дожидается загрузки страницы "Google Play"
+    3. Совершает проверку Url
+    4. Делает проверку по видимости текста на странице "Google Play
      */
 
     @DisplayName("Проверяем возможность перехода по кнопке 'Google Play' для скачивания приложения")
@@ -54,6 +59,7 @@ public class InstallAppsWebTest extends BaseWebSettingsTest {
         driver.get("https://lingualeo.com");
         new InstallingApplicationsPage(driver)
                 .clickGooglePlay()
+                .waitUntilPageLoad()
                 .checkUrl("https://play.google.com/store/apps/details?id=com.lingualeo.android")
                 .contentWithDisplayed("Учить английский язык с Lingualeo");
 
@@ -61,7 +67,8 @@ public class InstallAppsWebTest extends BaseWebSettingsTest {
 
       /*
     1. Кликает на кнопку "Расширение для браузеров"
-    2. Делает проверку по видимости текста на странице "Расширение для браузеров"
+    2. Дожидается загрузки страницы "Расширение для браузеров"
+    3. Делает проверку по видимости текста на странице "Расширение для браузеров"
      */
 
     @DisplayName("Проверяем возможность перехода по кнопке 'Расширение для браузеров'")
@@ -70,6 +77,7 @@ public class InstallAppsWebTest extends BaseWebSettingsTest {
         driver.get("https://lingualeo.com");
         new InstallingApplicationsPage(driver)
                 .clickGoogleExpansion()
+                .waitUntilPageLoad()
                 .contentWithDisplayed("Lingualeo Language Translator");
     }
 

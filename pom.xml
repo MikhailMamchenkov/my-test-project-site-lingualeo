@@ -59,7 +59,7 @@
                     <forkCount>5</forkCount>
                     <reuseForks>false</reuseForks>
 
-                    <rerunFailingTestsCount>2</rerunFailingTestsCount>
+                    <rerunFailingTestsCount>3</rerunFailingTestsCount>
 
 
                     <!--true - Статус билда не зависит от прохождения тестов-->

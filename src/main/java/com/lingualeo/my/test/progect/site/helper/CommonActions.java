@@ -1,6 +1,7 @@
 package com.lingualeo.my.test.progect.site.helper;
 
 import com.lingualeo.my.test.progect.site.BasePage;
+import com.lingualeo.my.test.progect.site.page.ContentPage;
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -60,7 +61,7 @@ public class CommonActions extends BasePage {
     }
 
 
-    public void waitPageLoad() {
+    public ContentPage waitPageLoad() {
 
         JavascriptExecutor js = (JavascriptExecutor) driver;
         WebDriverWait wait = new WebDriverWait(driver, 20);
@@ -91,7 +92,9 @@ public class CommonActions extends BasePage {
         }
 
         wait.until(jsLoad);
+        return new ContentPage(driver);
     }
+
 
 }
 
