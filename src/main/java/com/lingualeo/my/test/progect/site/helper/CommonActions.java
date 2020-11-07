@@ -1,14 +1,10 @@
 package com.lingualeo.my.test.progect.site.helper;
 
-import com.lingualeo.my.test.progect.site.BasePage;
-import com.lingualeo.my.test.progect.site.page.ContentPage;
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedCondition;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 
@@ -19,34 +15,6 @@ public class CommonActions extends BasePage {
         super(driver);
     }
 
-    public void waitLocator(WebElement locator) {
-        wait.until(ExpectedConditions.visibilityOf(locator));
-    }
-
-    public void clickWithWait(WebElement locator) {
-        wait.until(ExpectedConditions.visibilityOf(locator)).click();
-    }
-
-
-    public void clickWithWaitAndSendKeys(WebElement locator, String texforSendKeys) {
-        wait.until(ExpectedConditions.visibilityOf(locator)).sendKeys(texforSendKeys);
-    }
-
-    public void isDisplayed(WebElement locator) {
-        wait.until(ExpectedConditions.visibilityOf(locator)).isDisplayed();
-    }
-
-    public void equalsCheck(String expected, String actual, String errorMessage) {
-        Assertions.assertEquals(errorMessage, expected, actual);
-    }
-
-    public String getTextWithWait(WebElement locator) {
-        return wait.until(ExpectedConditions.visibilityOf(locator)).getText();
-    }
-
-    public void clickButton(String text) {
-        driver.findElement(By.xpath("//div[text()='" + text + "']")).click();
-    }
 
     public CommonActions contentIsDisplayed(String text) {
         driver.findElement(By.xpath("//*[text()='" + text + "']")).isDisplayed();
@@ -61,7 +29,7 @@ public class CommonActions extends BasePage {
     }
 
 
-    public ContentPage waitPageLoad() {
+    public ChecksPage waitPageLoad() {
 
         JavascriptExecutor js = (JavascriptExecutor) driver;
         WebDriverWait wait = new WebDriverWait(driver, 20);
@@ -92,7 +60,7 @@ public class CommonActions extends BasePage {
         }
 
         wait.until(jsLoad);
-        return new ContentPage(driver);
+        return new ChecksPage(driver);
     }
 
 

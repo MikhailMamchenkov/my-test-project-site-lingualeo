@@ -15,8 +15,6 @@ public abstract class BaseWebSettingsTest {
     protected WebDriver driver;
     protected WebDriverWait wait;
 
-
-
     @BeforeEach
     public void beforeAllTest() {
 
@@ -27,15 +25,15 @@ public abstract class BaseWebSettingsTest {
         chromeOptions.addArguments("--disabled-notifications");
         chromeOptions.addArguments("--disabled-popup-blocking");
         driver = new ChromeDriver(chromeOptions);
-        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-        driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
-        driver.manage().timeouts().setScriptTimeout(30, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
+        driver.manage().timeouts().pageLoadTimeout(50, TimeUnit.SECONDS);
+        driver.manage().timeouts().setScriptTimeout(50, TimeUnit.SECONDS);
         driver.manage().window().maximize();
-        driver.get("https://lingualeo.com");
-        wait = new WebDriverWait(driver, 30);
+        //driver.get("https://lingualeo.com");
+        wait = new WebDriverWait(driver, 50);
     }
 
-
+    
 
     @AfterEach
     public void afterAllTest() {

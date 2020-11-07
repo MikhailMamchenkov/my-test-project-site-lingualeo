@@ -1,6 +1,9 @@
 package com.lingualeo.my.test.progect.site.block;
 
-import com.lingualeo.my.test.progect.site.BasePage;
+import com.lingualeo.my.test.progect.site.helper.BasePage;
+import com.lingualeo.my.test.progect.site.page.MainPopUpPage;
+import com.lingualeo.my.test.progect.site.page.language.LanguagePage;
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -43,11 +46,14 @@ public class HeaderBlock extends BasePage {
         super(driver);
     }
 
-    public WebElement getAuthorizationButton() {
-        return authorizationButton;
+    @Step("Кликает по кнопке Авторизация")
+    public MainPopUpPage ckickAuthorizationButton() {
+        this.authorizationButton.click();
+        return new MainPopUpPage(driver);
     }
-
-    public WebElement getLanguageButton() {
-        return languageButton;
+    @Step("Кликает по кнопке с выбором языкового интерфейса на странице")
+    public LanguagePage ckickLanguageButton() {
+        this.languageButton.click();
+        return new LanguagePage(driver);
     }
 }
